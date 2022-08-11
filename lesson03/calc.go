@@ -8,7 +8,7 @@ import (
 
 func main() {
 	var (
-		op1, op2, operation     string
+		op1, op2, operation string
 	)
 
 	repeat := true
@@ -58,7 +58,6 @@ func main() {
 			if fA < 0 || fB < 0 {
 				fmt.Println("Факториал определен только для целых неотрицательных чисел")
 				continue
-			} else {
 			}
 			fmt.Printf("!%d = %d и !%d = %d\n", iA, fac(iA), iB, fac(iB))
 		default:
@@ -68,10 +67,10 @@ func main() {
 	}
 }
 
-func  fac(n uint64) uint64 {
+func fac(n uint64) uint64 {
 	if n == 0 {
 		return 1
 	} else {
-		return n * fac(n - 1)
+		return n * fac(n-1)
 	}
 }
