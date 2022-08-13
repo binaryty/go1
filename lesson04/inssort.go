@@ -1,11 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+)
 
 func main() {
-	var arr = []int{2, 7, 4, 0, 9, 5, 3, 8, 6, 1}
+	scanner := bufio.NewScanner(os.Stdin)
+	arr := make([]int, 0, 100)
 
-	fmt.Printf("%v\n", insertionSort(arr))
+	fmt.Println("Введите элементы массива (целые числа через Enter) или q чтобы завершить ввод")
+
+	for scanner.Scan() {
+		input := scanner.Text()
+		if input == "q" {
+			break
+		}
+		num, err := strconv.ParseInt(input, 10, 64)
+		if err != nil {
+			fmt.Println("Вы ввели не число! Повторите ввод.")
+			continue
+		}
+		arr = append(arr, int(num))
+	}
+	fmt.Printf("Исходный массив:\n%v\n", arr)
+	fmt.Printf("Отсортированный массив:\n%v\n", insertionSort(arr))
 }
 
 func insertionSort(arr []int) []int {
