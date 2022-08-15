@@ -1,2 +1,2 @@
-# go1
+# Go1
 Homework Golang
