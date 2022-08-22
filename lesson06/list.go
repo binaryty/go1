@@ -90,7 +90,7 @@ func (L *List) Print() {
 	fmt.Printf("%v\n", nil)
 }
 
-func clear(){
+func clear() {
 	fmt.Print("\033[H\033[2J")
 }
 
@@ -98,7 +98,7 @@ func main() {
 
 	list := List{}
 	scanner := bufio.NewScanner(os.Stdin)
-  clear()
+	clear()
 
 	for {
 		fmt.Println("Выберите команду для работы с односвязным списком из предложенных ниже.")
