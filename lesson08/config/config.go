@@ -7,6 +7,8 @@ import (
 	"strconv"
 )
 
+//Реализовал на случай подключения envcongig 
+//Очень странно работаeт url.Parse всегда возвращает в ошибку nil, приходится оринтироваться на распарсеные поля структуры
 type bUrl string
 
 // func (bu *bUrl) Decode(s string) error {
