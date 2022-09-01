@@ -2,7 +2,6 @@ package config
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"log"
 	"net/url"
@@ -104,10 +103,10 @@ type JSONConfig struct {
 func (cj *JSONConfig) loadFromJSON(fileName string) error {
 	data, err := os.ReadFile(fileName)
 	if err != nil {
-		return errors.New("JSONConfig->loadFromJSON: unable to read file " + fileName)
+		return fmt.Errorf("JSONConfig->loadFromJSON: %v", err)
 	}
 	if err = json.Unmarshal(data, &cj); err != nil {
-		return errors.New("JSONConfig->loadFromJson: can't unmarshal data")
+		return fmt.Errorf("JSONConfig->loadFromJson: %v", err)
 	}
 
 	return nil
