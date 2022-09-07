@@ -1,3 +1,4 @@
+// Package area designed to calculate the area of shapes
 package area
 
 import (
