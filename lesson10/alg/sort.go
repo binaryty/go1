@@ -13,8 +13,7 @@ func FillArr(a []int) {
 }
 
 // InsSort function takes a slice of int as input and returns it sorted in ascending order.
-func InsSort(data []int) []int {
-	arr := data
+func InsSort(arr []int) []int {
 	for i := 1; i < len(arr); i++ {
 		el := arr[i]
 		idx := i
@@ -28,8 +27,7 @@ func InsSort(data []int) []int {
 }
 
 // BubbleSort function takes a slice of int as input and return it sorted in ascending order.
-func BubbleSort(data []int) []int {
-	arr := data
+func BubbleSort(arr []int) []int {
 	needSort := false
 	for {
 		needSort = false
@@ -48,8 +46,7 @@ func BubbleSort(data []int) []int {
 }
 
 // QuickSort function use std func sort.Ints
-func QuickSort(data []int) []int {
-	arr := data
+func QuickSort(arr []int) []int {
 	sort.Ints(arr)
 
 	return arr
